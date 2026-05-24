@@ -327,7 +327,7 @@ export const botConfig = {
 
     // Minimum time between verification attempts (milliseconds).
     // 5000 = 5 seconds.
-    verificationCooldown: 5000,  
+    verificationCooldown: 7000,  
 
     // Maximum failed attempts allowed inside the time window below.
     maxVerificationAttempts: 3,   
