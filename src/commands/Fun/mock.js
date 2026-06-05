@@ -11,12 +11,12 @@ export default {
     .setDescription("cOnVeRtS yOuR tExT tO sPoNgEbOb CaSe.")
     .addStringOption((option) =>
       option
-        .setName("text")
-        .setDescription("The text to mock.")
+        .setName("Sentence")
+        .setDescription("The sentence to mock.")
         .setRequired(true)
         .setMaxLength(1000),
     ),
-  category: 'Fun',
+  category: 'Funny',
 
   async execute(interaction, config, client) {
     try {
@@ -44,7 +44,7 @@ export default {
         }
       }
 
-      const embed = successEmbed("sPoNgEbOb cAsE", `"${mockedText}"`);
+      const embed = successEmbed("sPoNgEbOb cAsE", `"${mockedSentence}"`);
 
       await InteractionHelper.safeReply(interaction, { embeds: [embed] });
       logger.debug(`Mock command executed by user ${interaction.user.id} in guild ${interaction.guildId}`);
