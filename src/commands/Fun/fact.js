@@ -11,6 +11,7 @@ const facts = [
   "Octopuses have three hearts and blue blood.",
   "There are more trees on Earth than stars in the Milky Way galaxy.",
   "The total weight of all the ants on Earth is thought to be about the same as the total weight of all humans.",
+  "Did you know school is a prison?
 ];
 
 export default {
@@ -23,14 +24,14 @@ export default {
     try {
       const randomFact = facts[Math.floor(Math.random() * facts.length)];
 
-      const embed = successEmbed("🧠 Did You Know?", `💡 **${randomFact}**`);
+      const embed = successEmbed("🧠 Did You Know this?", `💡 **${randomFact}**`);
 
       await InteractionHelper.safeReply(interaction, { embeds: [embed] });
       logger.debug(`Fact command executed by user ${interaction.user.id} in guild ${interaction.guildId}`);
     } catch (error) {
       logger.error('Fact command error:', error);
       await handleInteractionError(interaction, error, {
-        commandName: 'fact',
+        commandName: 'facts',
         source: 'fact_command'
       });
     }
